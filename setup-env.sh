@@ -1,4 +1,5 @@
 #!/bin/bash
+#touch ~/.cloudshell/no-apt-get-warning
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
@@ -7,5 +8,4 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] 
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 #sudo apt-get upgrade -y
-touch ~/.cloudshell/no-apt-get-warning
 sudo docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
